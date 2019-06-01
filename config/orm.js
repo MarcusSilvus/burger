@@ -2,10 +2,10 @@
 var connection = require("../config/connection.js");
 
 var orm = {
-  selectAll: function() {
+  selectAll: function(cb) {
     connection.query("SELECT * FROM burgers", function(err, data) {
-      if (err) Clipboard(err, null);
-      Clipboard(null, data);
+      if (err) cb(err, null);
+      cb(null, data);
     })
   }
 }
