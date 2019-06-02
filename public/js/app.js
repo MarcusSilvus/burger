@@ -26,6 +26,19 @@ var burgerTemplate = (burgerName, id, id_dovoured) => {
   return burgerContainer
 };
 
+var displayNewBurger = (burger) => {
+  var name = burger.burger_name;
+  var id = burger.id;
+  var is_devoured = burger.is_devoured;
+
+  var newBurger = burgerTemplate(name, id , is_devoured);
+
+  $('.content-burger').prepend(newBurger);
+};
+
+var addBurgerFail = (response) => {
+  alert('burger not added');
+};
 
 $('button[type="submit"]').on('click', function (event) {
   event.preventDefault();
@@ -39,10 +52,6 @@ $('button[type="submit"]').on('click', function (event) {
       burger_name: burgerName
     }
   })
-    .then(function () {
-      alert('burger added');
-    })
-    .catch(function () {
-      alert('burger not added');
-    });
+    .then(displayNewBurger)
+    .catch(addBurgerFail);
 });
