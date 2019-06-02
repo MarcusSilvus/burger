@@ -40,9 +40,9 @@ $('button[type="submit"]').on('click', function (event) {
     }
   })
     .then(function () {
-      alert('burger added')
+      alert('burger added');
     })
     .catch(function () {
-      alert('burger not added')
+      alert('burger not added');
     });
 });
