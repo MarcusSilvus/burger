@@ -1,3 +1,4 @@
+// adds new burger and button to page
 var burgerTemplate = (burgerName, id, id_dovoured) => {
 
   var burgerContainer = $('<div>').attr({
@@ -26,20 +27,23 @@ var burgerTemplate = (burgerName, id, id_dovoured) => {
   return burgerContainer
 };
 
+// handles successful adds
 var displayNewBurger = (burger) => {
   var name = burger.burger_name;
   var id = burger.id;
   var is_devoured = burger.is_devoured;
-
-  var newBurger = burgerTemplate(name, id , is_devoured);
+  var newBurger = burgerTemplate( name, id , is_devoured );
 
   $('.content-burger').prepend(newBurger);
+  $('input').val('');
 };
 
+// handles failures
 var addBurgerFail = (response) => {
   alert('burger not added');
 };
 
+// on click logic to add burger
 $('button[type="submit"]').on('click', function (event) {
   event.preventDefault();
 
