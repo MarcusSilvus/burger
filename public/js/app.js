@@ -18,8 +18,12 @@ var burgerTemplate = (burgerName, id, id_dovoured) => {
     'data-state': is_devoured
   });
 
-  name.html(burgerName)
+  name.html(burgerName);
+  button.html('Eat burger');
 
+  burgerContainer.append(img, name, button);
+
+  return burgerContainer
 };
 
 
