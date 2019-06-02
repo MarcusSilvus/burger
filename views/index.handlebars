@@ -6,9 +6,9 @@
 <div class="content-burger">
   {{#each burgers}}
   <div class="content-burger_list" id={{id}}>
-    <img src="/public/assets/img/burger.jpg" alt="burger">
+    {{!-- <img src="/public/assets/img/burger.jpg" alt="burger"> --}}
     <p>{{burger_name}} </p>
-    <button class="btn btn-default devoured" data-id="{{id}}" data-state="{{is_devoured}}">
+    <button class="btn btn-primary devoured" data-id="{{id}}" data-state="{{is_devoured}}">
         {{#if is_devoured}} vommit {{else}} add to Devoured {{/if}}
     </button>
   </div>

@@ -6,9 +6,17 @@ var orm = {
     connection.query("SELECT * FROM burgers", function(err, data) {
       if (err) cb(err, null);
       cb(null, data);
+    });
+  },
+  
+  insertOne: function(burgerName, cb) {
+    var sqlQuery = "INSERT INTO burgers(burger_name) VALUES('${burgerName}')";
+    connection.query(sqlQuery, function(err, data) {
+      if(err) cb(err, null);
+      cb(null, data);
     })
   }
-}
+};
 
 module.exports = orm;
 
