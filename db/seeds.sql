@@ -9,4 +9,4 @@ VALUES ("bacon burger");
 
 USE burgers_db;
 
-DELETE FROM burgers WHERE burger_name="${burgerName};
+DELETE FROM burgers WHERE burger_name="${burgerName}";

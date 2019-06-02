@@ -1,5 +1,5 @@
 // adds new burger and button to page
-var burgerTemplate = (burgerName, id, id_dovoured) => {
+var burgerTemplate = (burgerName, id, is_devoured) => {
 
   var burgerContainer = $('<div>').attr({
     class: 'content-burger__list',
@@ -59,3 +59,6 @@ $('button[type="submit"]').on('click', function (event) {
     .then(displayNewBurger)
     .catch(addBurgerFail);
 });
+
+// FIXES 
+// need actual burger name to appear in db
