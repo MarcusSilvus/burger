@@ -1,7 +1,13 @@
 <div class="container content">
   <h1>Burger Time!</h1>
 
-  
+  <form>
+    <div class="form-group">
+      <input type="text" required placeholder="Add a burger" class="form-control" name="burger_name">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add burger</button>
+  </form>
 
 <div class="content-burger">
   {{#each burgers}}
@@ -9,7 +15,7 @@
     {{!-- <img src="/public/assets/img/burger.jpg" alt="burger"> --}}
     <p>{{burger_name}} </p>
     <button class="btn btn-primary devoured" data-id="{{id}}" data-state="{{is_devoured}}">
-        {{#if is_devoured}} vommit {{else}} add to Devoured {{/if}}
+        {{#if is_devoured}} vommit {{else}} Eat burger {{/if}}
     </button>
   </div>
   {{/each}}
