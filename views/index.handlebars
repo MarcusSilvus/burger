@@ -1,24 +1,50 @@
 <div class="container content">
-  <h1>Burger Time!</h1>
 
-  <form>
-    <div class="form-group">
-      <input type="text" required placeholder="Add a burger" class="form-control" name="burger_name">
+  {{!-- <div class="container">
+    <div class="row">
+      <div class="col-12"> --}}
+        <h1>Burger Time!</h1>
+
+        <form>
+          <div class="form-group">
+            <input type="text" required placeholder="Add a burger" class="form-control" name="burger_name">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Add burger</button>
+        </form>
+
+      {{!-- </div>
     </div>
+  </div> --}}
 
-    <button type="submit" class="btn btn-primary">Add burger</button>
-  </form>
 
-<div class="content-burger">
-  {{#each burgers}}
-  <div class="content-burger__list" id={{id}}>
-    {{!-- <img src="/public/assets/img/burger.jpg" alt="burger"> --}}
-    <p>{{burger_name}} </p>
-    <button class="btn btn-primary devoured" data-id="{{id}}" data-state="{{is_devoured}}">
-        {{#if is_devoured}} vommit {{else}} Eat burger {{/if}}
-    </button>
+  <div class="container">
+    <div class="row">
+      <div class="content-burger col-6">
+        {{#each burgers}}
+        <div class="content-burger__list" id={{id}}>
+          {{!-- <img src="/public/assets/img/burger.jpg" alt="burger"> --}}
+          <p>{{burger_name}} </p>
+          <button id="eatBurgerBtn" class="btn btn-primary devoured" data-id="{{id}}" data-state="{{is_devoured}}">
+            {{#if is_devoured}} vommit {{else}} Eat burger {{/if}}
+          </button>
+        </div>
+        {{/each}}
+      </div>
+
+      <div class="content-devoured col-6">
+          {{#each burgers}}
+        <div class="content-burger__list" id={{id}}>
+          {{!-- <img src="/public/assets/img/burger.jpg" alt="burger"> --}}
+          <p>{{burger_name}} </p>
+          <button id="eatBurgerBtn" class="btn btn-primary devoured" data-id="{{id}}" data-state="{{is_devoured}}">
+            {{#if is_devoured}} vommit {{else}} Eat burger {{/if}}
+          </button>
+        </div>
+        {{/each}}
+      </div>
+
+    </div>
   </div>
-  {{/each}}
-</div>
-  
+
 </div>
