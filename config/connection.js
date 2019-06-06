@@ -22,4 +22,4 @@ connection.connect(function (err) {
 
 module.exports = connection;
 
-g8mh6ge01lu2z3n1.cbetxkdyhwsb.us - east - 1.rds.amazonaws.com
+// g8mh6ge01lu2z3n1.cbetxkdyhwsb.us - east - 1.rds.amazonaws.com
