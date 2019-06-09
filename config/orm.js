@@ -17,6 +17,15 @@ var orm = {
       if (err) cb(err, null);
       cb(null, data);
     })
+  },
+
+  updateOne: function (burgerId, cb) {
+    var sqlQuery = "UPDATE burgers SET devoured=1 WHERE id=" + burgerId;
+    console.log(sqlQuery);
+    connection.query(sqlQuery, function (err, data) {
+      if (err) cb(err, null);
+      cb(null, data);
+    })
   }
 };
 

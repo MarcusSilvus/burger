@@ -37,4 +37,21 @@ router.post('/add', (req, res) => {
   });
 });
 
+router.put('/devour', (req, res) => {
+  var burgerId = req.body.burgerId;
+console.log(burgerId);
+
+orm.updateOne(burgerId, function(error, burger) {
+  if(error) {
+    return res.status(401).json({
+      message: "Can't eat burger"
+    })
+  } 
+  return res.json({
+    burger
+  })
+})
+
+})
+
 module.exports = router;

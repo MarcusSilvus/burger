@@ -60,8 +60,21 @@ $('button[type="submit"]').on('click', function (event) {
     .catch(addBurgerFail);
 });
 
-$('button [id="eatBurgerBtn"]').on('click', function (event) {
+$('#undevoured').on('click', 'button', function (event) {
 
+  var burgerId = $(this).attr('data-id')
+  
+  $.ajax({
+    url: '/devour',
+    method: 'PUT',
+    data: {
+      burgerId: burgerId
+    }
+  })
+  .then(function (res) {
+    console.log(res);
+    
+  })
 });
 
 // $(".change-sleep").on("click", function(event) {
