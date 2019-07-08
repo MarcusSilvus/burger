@@ -3,7 +3,7 @@
   {{!-- <div class="container">
     <div class="row">
       <div class="col-12"> --}}
-  <h1>Burger Time!</h1>
+  <h1 class="title">Burger Time!</h1>
 
   <form>
     <div class="form-group">
@@ -22,21 +22,7 @@
     <div class="row">
       <div id="undevoured" class="content-burger col-6">
         {{#each burgers}}
-        {{#if devoured}}
-        <div class="content-burger__list" id={{id}}>
-          {{!-- <img src="/public/assets/img/burger.jpg" alt="burger"> --}}
-          <p>{{burger_name}} </p>
-          <button class="btn btn-primary devoured" data-id="{{id}}">
-            Eat burger
-          </button>
-        </div>
-        {{/if}}
-        {{/each}}
-      </div>
-
-      <div class="content-devoured col-6">
-        {{#each burgers}}
-         {{#unless devoured}}
+        {{#unless devoured}}
         <div class="content-burger__list" id={{id}}>
           {{!-- <img src="/public/assets/img/burger.jpg" alt="burger"> --}}
           <p>{{burger_name}} </p>
@@ -45,6 +31,20 @@
           </button>
         </div>
         {{/unless}}
+        {{/each}}
+      </div>
+
+      <div class="content-devoured col-6">
+        {{#each burgers}}
+         {{#if devoured}}
+        <div class="content-burger__list" id={{id}}>
+          {{!-- <img src="/public/assets/img/burger.jpg" alt="burger"> --}}
+          <p>{{burger_name}} </p>
+          {{!-- <button class="btn btn-primary vomit" data-id="{{id}}">
+            Vomit 
+          </button> --}}
+        </div>
+        {{/if}}
         {{/each}}
       </div>
 

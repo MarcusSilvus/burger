@@ -61,7 +61,7 @@ $('button[type="submit"]').on('click', function (event) {
 });
 
 $('#undevoured').on('click', 'button', function (event) {
-
+  event.preventDefault();
   var burgerId = $(this).attr('data-id')
   
   $.ajax({
@@ -75,28 +75,6 @@ $('#undevoured').on('click', 'button', function (event) {
     console.log(res);
     
   })
+  location.reload();
 });
 
-// $(".change-sleep").on("click", function(event) {
-//   var id = $(this).data("id");
-//   var newSleep = $(this).data("newsleep");
-
-//   var newSleepState = {
-//     sleepy: newSleep
-//   };
-
-//   // Send the PUT request.
-//   $.ajax("/api/cats/" + id, {
-//     type: "PUT",
-//     data: newSleepState
-//   }).then(
-//     function() {
-//       console.log("changed sleep to", newSleep);
-//       // Reload the page to get the updated list
-//       location.reload();
-//     }
-//   );
-// });
-
-// FIXES 
-// need actual burger name to appear in db
